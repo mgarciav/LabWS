@@ -1,0 +1,15 @@
+D:\Paradigmas\Lab1\ClientJavaWS\WcfServiceCSharp\bin\WcfServiceCSharp.dll
+D:\Paradigmas\Lab1\ClientJavaWS\WcfServiceCSharp\bin\WcfServiceCSharp.pdb
+D:\Paradigmas\Lab1\ClientJavaWS\WcfServiceCSharp\obj\Debug\WcfServiceCSharp.csprojResolveAssemblyReference.cache
+D:\Paradigmas\Lab1\ClientJavaWS\WcfServiceCSharp\obj\Debug\WcfServiceCSharp.dll
+D:\Paradigmas\Lab1\ClientJavaWS\WcfServiceCSharp\obj\Debug\WcfServiceCSharp.pdb
+C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\bin\WcfServiceCSharp.dll.config
+C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\bin\WcfServiceCSharp.dll
+C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\bin\WcfServiceCSharp.pdb
+C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\obj\Debug\WcfServiceCSharp.dll
+C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\obj\Debug\WcfServiceCSharp.pdb
+C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\bin\MongoDB.Bson.dll
+C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\bin\MongoDB.Driver.dll
+C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\bin\MongoDB.Bson.xml
+C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\bin\MongoDB.Driver.xml
+C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\obj\Debug\WcfServiceCSharp.csprojResolveAssemblyReference.cache
