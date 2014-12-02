@@ -24,19 +24,27 @@ namespace WcfServiceCSharp
         private MongoDatabase database;
         private MongoCollection collection;
 
-        /*public bool dbAdd(string name, string depto, int rut)
-        {
-            if (client == null)
-            {
-                client = new MongoClient("mongodb://localhost");
-                server = client.GetServer();
-                database = server.GetDatabase("local");
-            }
 
+        public bool dropDB ()
+        {
             try
             {
-                var entity = new Employed { Name = name, Depto = depto, Rut = rut };
-                collection.Insert(entity);
+                conectionDB();
+                database.DropCollection("entities");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool addDB(string name, string depto, string rut)
+        {
+            try
+            {
+                conectionDB();
+                collection.Insert(new Employed { Nombre = name, Depto = depto, Rut = rut });
                 return true;
             }
             catch
@@ -44,13 +52,11 @@ namespace WcfServiceCSharp
                 return false;
             }
 
-        }*/
+        }
 
         public string queryDB(string search)
         {
             conectionDB();
-
-            collection = database.GetCollection<Employed>("entities");
 
             var retorno = collection.FindAs<Employed>(Query<Employed>.EQ(el => el.Rut, search));
 
@@ -61,8 +67,6 @@ namespace WcfServiceCSharp
         public string queryTypeDB(string search, int type)
         {
             conectionDB();
-
-            collection = database.GetCollection<Employed>("entities");
 
             MongoCursor<Employed> retorno = null;
 
@@ -77,6 +81,9 @@ namespace WcfServiceCSharp
                 case 2:
                     retorno = collection.FindAs<Employed>(Query<Employed>.EQ(el => el.Depto, search));
                     break;
+                default:
+                    return null;
+                    break;
             }
 
             return jsoned(retorno);
@@ -90,6 +97,7 @@ namespace WcfServiceCSharp
                 client = new MongoClient("mongodb://localhost");
                 server = client.GetServer();
                 database = server.GetDatabase("local");
+                collection = database.GetCollection<Employed>("entities");
             }
         }
 

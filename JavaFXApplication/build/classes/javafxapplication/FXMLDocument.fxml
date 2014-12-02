@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.cell.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="284.0" prefWidth="414.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication.FXMLDocumentController">
+   <children>
+      <TabPane layoutX="-1.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+            <Tab text="Finanzas">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="Rut" />
+                              <TableColumn prefWidth="75.0" text="Sueldo" />
+                              <TableColumn prefWidth="75.0" text="Pagado" />
+                           </columns>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox>
+                           <children>
+                              <ComboBox prefHeight="25.0" prefWidth="104.0" />
+                              <TextField prefHeight="25.0" prefWidth="260.0" />
+                              <Button mnemonicParsing="false" text="Buscar" />
+                           </children>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+               </content>
+            </Tab>
+          <Tab text="Recursos humanos">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="rrhhTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="rrhhTableRut" prefWidth="73.0" text="Rut">
+                                <cellValueFactory><PropertyValueFactory property="Rut" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="rrhhTableNombre" prefWidth="152.0" text="Nombre">
+                                <cellValueFactory><PropertyValueFactory property="Nombre" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="rrhhTableDepto" prefWidth="135.0" text="Departamento">
+                                <cellValueFactory><PropertyValueFactory property="Depto" />
+                                </cellValueFactory>
+                            </TableColumn>
+                          </columns>
+                        </TableView>
+                     </center>
+                     <top>
+                        <HBox BorderPane.alignment="CENTER">
+                           <children>
+                              <ComboBox fx:id="rrhhComboBox" prefHeight="25.0" prefWidth="124.0" promptText="Seleccionar" />
+                              <TextField fx:id="rrhhTextField" prefHeight="25.0" prefWidth="231.0" />
+                              <Button fx:id="rrhhButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#busquedaDB" prefHeight="25.0" prefWidth="58.0" text="Buscar" textAlignment="CENTER" />
+                           </children>
+                        </HBox>
+                     </top>
+                  </BorderPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

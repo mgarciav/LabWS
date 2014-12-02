@@ -52,6 +52,38 @@ namespace WindowsFormsApplication1
             Console.WriteLine("hola mundo!");
         }
 
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = false;
+            button3.Enabled = false;
+            ServiceReferenceAsync.Service1Client wsNet = new ServiceReferenceAsync.Service1Client();
+            if (/*textBox3.Text.Length > 0 &&
+                textBox4.Text.Length > 0 &&
+                textBox5.Text.Length > 0 && */
+                await wsNet.addDBAsync(textBox3.Text, textBox5.Text, textBox4.Text))
+                MessageBox.Show("Empleado agregado");
+            else
+                MessageBox.Show("Error en el guardado");
+            button2.Enabled = true;
+            button3.Enabled = true;
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+        }
+
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = false;
+            button3.Enabled = false;
+            ServiceReferenceAsync.Service1Client wsNet = new ServiceReferenceAsync.Service1Client();
+            if(await wsNet.dropDBAsync())
+                MessageBox.Show("DB borrada");
+            else
+                MessageBox.Show("Error en la liberación");
+            button2.Enabled = true;
+            button3.Enabled = true;
+        }
+
     }
 
     public class Employed

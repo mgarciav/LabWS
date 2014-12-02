@@ -15,6 +15,18 @@ namespace WindowsFormsApplication1.ServiceReferenceAsync {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceAsync.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/dropDB", ReplyAction="http://tempuri.org/IService1/dropDBResponse")]
+        bool dropDB();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/dropDB", ReplyAction="http://tempuri.org/IService1/dropDBResponse")]
+        System.Threading.Tasks.Task<bool> dropDBAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addDB", ReplyAction="http://tempuri.org/IService1/addDBResponse")]
+        bool addDB(string name, string depto, string rut);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addDB", ReplyAction="http://tempuri.org/IService1/addDBResponse")]
+        System.Threading.Tasks.Task<bool> addDBAsync(string name, string depto, string rut);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/queryDB", ReplyAction="http://tempuri.org/IService1/queryDBResponse")]
         string queryDB(string search);
         
@@ -53,6 +65,22 @@ namespace WindowsFormsApplication1.ServiceReferenceAsync {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public bool dropDB() {
+            return base.Channel.dropDB();
+        }
+        
+        public System.Threading.Tasks.Task<bool> dropDBAsync() {
+            return base.Channel.dropDBAsync();
+        }
+        
+        public bool addDB(string name, string depto, string rut) {
+            return base.Channel.addDB(name, depto, rut);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addDBAsync(string name, string depto, string rut) {
+            return base.Channel.addDBAsync(name, depto, rut);
         }
         
         public string queryDB(string search) {

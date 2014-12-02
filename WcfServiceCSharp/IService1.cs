@@ -12,8 +12,11 @@ namespace WcfServiceCSharp
     [ServiceContract]
     public interface IService1
     {
-        //[OperationContract]
-        //bool dbAdd(string name, string depto, int rut);
+        [OperationContract]
+        bool dropDB();
+
+        [OperationContract]
+        bool addDB(string name, string depto, string rut);
 
         [OperationContract]
         string queryDB(string search);

@@ -13,3 +13,13 @@ C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\bin\MongoDB.Driver.dll
 C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\bin\MongoDB.Bson.xml
 C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\bin\MongoDB.Driver.xml
 C:\Users\Nicolas\Desktop\webservice\cs\WcfServiceCSharp\obj\Debug\WcfServiceCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Nicolas\Documents\GitHub\LabWS\WcfServiceCSharp\bin\WcfServiceCSharp.dll.config
+C:\Users\Nicolas\Documents\GitHub\LabWS\WcfServiceCSharp\bin\WcfServiceCSharp.dll
+C:\Users\Nicolas\Documents\GitHub\LabWS\WcfServiceCSharp\bin\WcfServiceCSharp.pdb
+C:\Users\Nicolas\Documents\GitHub\LabWS\WcfServiceCSharp\bin\MongoDB.Bson.dll
+C:\Users\Nicolas\Documents\GitHub\LabWS\WcfServiceCSharp\bin\MongoDB.Driver.dll
+C:\Users\Nicolas\Documents\GitHub\LabWS\WcfServiceCSharp\bin\MongoDB.Bson.xml
+C:\Users\Nicolas\Documents\GitHub\LabWS\WcfServiceCSharp\bin\MongoDB.Driver.xml
+C:\Users\Nicolas\Documents\GitHub\LabWS\WcfServiceCSharp\obj\Debug\WcfServiceCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Nicolas\Documents\GitHub\LabWS\WcfServiceCSharp\obj\Debug\WcfServiceCSharp.dll
+C:\Users\Nicolas\Documents\GitHub\LabWS\WcfServiceCSharp\obj\Debug\WcfServiceCSharp.pdb

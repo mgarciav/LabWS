@@ -2,6 +2,34 @@
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="dropDB">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dropDBResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="dropDBResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addDB">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="depto" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="rut" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addDBResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="addDBResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="queryDB">
         <xs:complexType>
           <xs:sequence>
@@ -74,6 +102,18 @@
       <xs:attribute name="Ref" type="xs:IDREF" />
     </xs:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_dropDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:dropDB" />
+  </wsdl:message>
+  <wsdl:message name="IService1_dropDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:dropDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:addDB" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addDBResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_queryDB_InputMessage">
     <wsdl:part name="parameters" element="tns:queryDB" />
   </wsdl:message>
@@ -87,6 +127,14 @@
     <wsdl:part name="parameters" element="tns:queryTypeDBResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="dropDB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/dropDB" message="tns:IService1_dropDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/dropDBResponse" message="tns:IService1_dropDB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addDB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addDB" message="tns:IService1_addDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addDBResponse" message="tns:IService1_addDB_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="queryDB">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/queryDB" message="tns:IService1_queryDB_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/queryDBResponse" message="tns:IService1_queryDB_OutputMessage" />
@@ -98,6 +146,24 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="dropDB">
+      <soap:operation soapAction="http://tempuri.org/IService1/dropDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDB">
+      <soap:operation soapAction="http://tempuri.org/IService1/addDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="queryDB">
       <soap:operation soapAction="http://tempuri.org/IService1/queryDB" style="document" />
       <wsdl:input>
