@@ -82,6 +82,7 @@ public class FXMLDocumentController implements Initializable {
         javafxapplication.IService1 port = service.getBasicHttpBindingIService1();
         return port.queryDB(search);
     }
+   
     
     private static String queryTypeDB(java.lang.String search, java.lang.Integer type) {
         javafxapplication.Service1 service = new javafxapplication.Service1();
@@ -95,5 +96,5 @@ public class FXMLDocumentController implements Initializable {
         public String Rut;
         public String Depto;
     }
-    
-}
+
+

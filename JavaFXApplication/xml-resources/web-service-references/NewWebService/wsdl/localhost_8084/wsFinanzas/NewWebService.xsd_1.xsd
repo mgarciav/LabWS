@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://finanzas/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://finanzas/">
+
+<xs:element name="busquedaPagado" type="tns:busquedaPagado" />
+
+<xs:element name="busquedaPagadoResponse" type="tns:busquedaPagadoResponse" />
+
+<xs:element name="busquedaRut" type="tns:busquedaRut" />
+
+<xs:element name="busquedaRutResponse" type="tns:busquedaRutResponse" />
+
+<xs:complexType name="busquedaPagado">
+<xs:sequence>
+<xs:element name="sueldo" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="busquedaPagadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="busquedaRut">
+<xs:sequence>
+<xs:element name="rut" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="busquedaRutResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

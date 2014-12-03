@@ -33,5 +33,22 @@
         <delete dir="${build.generated.dir}/jax-wsCache/Service1"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/javafxapplication"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-Service1"/>
+    <target name="wsimport-client-NewWebService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/NewWebService"/>
+        <property name="wsdl-NewWebService" location="xml-resources/web-service-references/NewWebService/wsdl/localhost_8084/wsFinanzas/NewWebService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/NewWebService" destdir="${build.generated.dir}/jax-wsCache/NewWebService" wsdl="${wsdl-NewWebService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8084/wsFinanzas/NewWebService?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-NewWebService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/NewWebService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/NewWebService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-NewWebService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/NewWebService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/finanzas"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-Service1, wsimport-client-NewWebService"/>
 </project>

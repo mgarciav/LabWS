@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:44080/Service1.svc?singleWsdl" uri="xml-resources/web-service-references/Service1/wsdl/localhost_44080/Service1.svc.singlewsdl.wsdl"/>
+    <system systemId="http://localhost:8084/wsFinanzas" uri="xml-resources/web-service-references/wsFinanzas/wsdl/localhost_8084/wsFinanzas/index"/>
+    <system systemId="http://localhost:8084/wsFinanzas/NewWebService?WSDL" uri="xml-resources/web-service-references/NewWebService/wsdl/localhost_8084/wsFinanzas/NewWebService.wsdl"/>
+    <system systemId="http://localhost:8084/wsFinanzas/NewWebService?xsd=1" uri="xml-resources/web-service-references/NewWebService/wsdl/localhost_8084/wsFinanzas/NewWebService.xsd_1.xsd"/>
 </catalog>
