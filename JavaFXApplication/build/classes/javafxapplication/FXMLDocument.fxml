@@ -16,20 +16,20 @@
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <TableView fx:id="fTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Rut" />
-                              <TableColumn prefWidth="75.0" text="Sueldo" />
-                              <TableColumn prefWidth="75.0" text="Pagado" />
+                              <TableColumn fx:id="fTableRut" prefWidth="75.0" text="Rut" />
+                              <TableColumn fx:id="fTableSueldo" prefWidth="75.0" text="Sueldo" />
+                              <TableColumn fx:id="fTablePagado" prefWidth="75.0" text="Pagado" />
                            </columns>
                         </TableView>
                      </center>
                      <top>
                         <HBox>
                            <children>
-                              <ComboBox prefHeight="25.0" prefWidth="104.0" />
-                              <TextField prefHeight="25.0" prefWidth="260.0" />
-                              <Button mnemonicParsing="false" text="Buscar" />
+                              <ComboBox fx:id="fComboBox" prefHeight="25.0" prefWidth="104.0" promptText="Seleccionar" />
+                              <TextField fx:id="fTextField" prefHeight="25.0" prefWidth="260.0" />
+                              <Button fx:id="fButton" mnemonicParsing="false" onAction="#busquedaDB1" text="Buscar" />
                            </children>
                         </HBox>
                      </top>

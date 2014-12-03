@@ -39,6 +39,7 @@ public class FXMLDocumentController implements Initializable {
     private TableColumn rrhhTableNombre;
     @FXML
     private TableColumn rrhhTableDepto;
+    
     @FXML
     private ComboBox fComboBox;
     @FXML
@@ -86,11 +87,7 @@ public class FXMLDocumentController implements Initializable {
         data.add(new Employed(aux.Nombre, aux.Depto, aux.Rut));
         });
     }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        rrhhComboBox.getItems().setAll("Nombre", "Rut", "Departamento");
-    }    
+        
     
     @FXML
     private void busquedaDB1(ActionEvent event) {
@@ -125,6 +122,11 @@ public class FXMLDocumentController implements Initializable {
         });
     }
     
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        rrhhComboBox.getItems().setAll("Nombre", "Rut", "Departamento");
+        fComboBox.getItems().setAll("Rut", "Sueldo", "Pagado");
+    }   
     
     private static String queryDB(java.lang.String search) {
         javafxapplication.Service1 service = new javafxapplication.Service1();
