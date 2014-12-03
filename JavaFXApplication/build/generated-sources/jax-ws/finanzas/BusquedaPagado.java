@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="sueldo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="numerito" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,11 +28,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "busquedaPagado", propOrder = {
-    "sueldo"
+    "sueldo",
+    "numerito"
 })
 public class BusquedaPagado {
 
     protected String sueldo;
+    protected int numerito;
 
     /**
      * Obtiene el valor de la propiedad sueldo.
@@ -55,6 +58,22 @@ public class BusquedaPagado {
      */
     public void setSueldo(String value) {
         this.sueldo = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad numerito.
+     * 
+     */
+    public int getNumerito() {
+        return numerito;
+    }
+
+    /**
+     * Define el valor de la propiedad numerito.
+     * 
+     */
+    public void setNumerito(int value) {
+        this.numerito = value;
     }
 
 }

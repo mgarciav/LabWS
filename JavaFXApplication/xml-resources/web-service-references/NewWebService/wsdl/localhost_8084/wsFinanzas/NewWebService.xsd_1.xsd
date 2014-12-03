@@ -11,6 +11,7 @@
 <xs:complexType name="busquedaPagado">
 <xs:sequence>
 <xs:element name="sueldo" type="xs:string" minOccurs="0" />
+<xs:element name="numerito" type="xs:int" />
 </xs:sequence>
 </xs:complexType>
 

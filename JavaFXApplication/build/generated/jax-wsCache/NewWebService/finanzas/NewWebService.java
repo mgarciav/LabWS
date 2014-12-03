@@ -26,21 +26,6 @@ public interface NewWebService {
 
     /**
      * 
-     * @param sueldo
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "busquedaPagado", targetNamespace = "http://finanzas/", className = "finanzas.BusquedaPagado")
-    @ResponseWrapper(localName = "busquedaPagadoResponse", targetNamespace = "http://finanzas/", className = "finanzas.BusquedaPagadoResponse")
-    @Action(input = "http://finanzas/NewWebService/busquedaPagadoRequest", output = "http://finanzas/NewWebService/busquedaPagadoResponse")
-    public String busquedaPagado(
-        @WebParam(name = "sueldo", targetNamespace = "")
-        String sueldo);
-
-    /**
-     * 
      * @param rut
      * @return
      *     returns java.lang.String
@@ -53,5 +38,23 @@ public interface NewWebService {
     public String busquedaRut(
         @WebParam(name = "rut", targetNamespace = "")
         String rut);
+
+    /**
+     * 
+     * @param sueldo
+     * @param numerito
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "busquedaPagado", targetNamespace = "http://finanzas/", className = "finanzas.BusquedaPagado")
+    @ResponseWrapper(localName = "busquedaPagadoResponse", targetNamespace = "http://finanzas/", className = "finanzas.BusquedaPagadoResponse")
+    @Action(input = "http://finanzas/NewWebService/busquedaPagadoRequest", output = "http://finanzas/NewWebService/busquedaPagadoResponse")
+    public String busquedaPagado(
+        @WebParam(name = "sueldo", targetNamespace = "")
+        String sueldo,
+        @WebParam(name = "numerito", targetNamespace = "")
+        int numerito);
 
 }

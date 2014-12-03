@@ -39,6 +39,21 @@ public class FXMLDocumentController implements Initializable {
     private TableColumn rrhhTableNombre;
     @FXML
     private TableColumn rrhhTableDepto;
+    @FXML
+    private ComboBox fComboBox;
+    @FXML
+    private TextField fTextField;
+    @FXML
+    private Button fButton;
+    @FXML
+    private TableView<Employed1> fTable;
+    @FXML
+    private TableColumn fTableRut;
+    @FXML
+    private TableColumn fTableSueldo;
+    @FXML
+    private TableColumn fTablePagado;
+    
     
     @FXML
     private void busquedaDB(ActionEvent event) {
@@ -76,7 +91,41 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         rrhhComboBox.getItems().setAll("Nombre", "Rut", "Departamento");
     }    
-
+    
+    @FXML
+    private void busquedaDB1(ActionEvent event) {
+        
+        if (fTextField.getText().isEmpty())
+            return;
+        int switchType1 = -1;
+        
+        switch ((String) fComboBox.getValue() )
+        {
+            case "Rut":
+                switchType1 = 0;
+                break;
+            case "Sueldo":
+                switchType1 = 1;
+                break;
+            case "Pagado":
+                switchType1 = 2;
+                break;
+        }
+                
+        System.out.println(switchType1 + " " + fTextField.getText());
+                
+        String resultado = busquedaPagado(fTextField.getText(), switchType1);
+        List<Employed1Json> empleados1 = new Gson().fromJson(resultado, new TypeToken<List<Employed1Json>>(){}.getType());
+                
+        ObservableList<Employed1> data1;
+        data1 = fTable.getItems();
+        data1.clear();
+        empleados1.stream().forEach((Employed1Json aux) -> {
+        data1.add(new Employed1(aux.Rut, aux.Sueldo, aux.Pagado));
+        });
+    }
+    
+    
     private static String queryDB(java.lang.String search) {
         javafxapplication.Service1 service = new javafxapplication.Service1();
         javafxapplication.IService1 port = service.getBasicHttpBindingIService1();
@@ -90,11 +139,32 @@ public class FXMLDocumentController implements Initializable {
         return port.queryTypeDB(search, type);
     }
     
+    private static String busquedaPagado(java.lang.String sueldo, int numerito) {
+        finanzas.NewWebService_Service service = new finanzas.NewWebService_Service();
+        finanzas.NewWebService port = service.getNewWebServicePort();
+        return port.busquedaPagado(sueldo, numerito);
+    }
+
+    private static String busquedaRut(java.lang.String rut) {
+        finanzas.NewWebService_Service service = new finanzas.NewWebService_Service();
+        finanzas.NewWebService port = service.getNewWebServicePort();
+        return port.busquedaRut(rut);
+    }
+    
     public class EmployedJson
     {
         public String Nombre;
         public String Rut;
         public String Depto;
     }
+    
+    public class Employed1Json
+    {
+        public String Rut;
+        public String Sueldo;
+        public String Pagado;
+    }
 
+      
 
+}

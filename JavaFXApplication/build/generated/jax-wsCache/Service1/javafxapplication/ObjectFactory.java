@@ -49,12 +49,12 @@ public class ObjectFactory {
     private final static QName _QName_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "QName");
     private final static QName _AnyType_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "anyType");
     private final static QName _String_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "string");
-    private final static QName _QueryTypeDBSearch_QNAME = new QName("http://tempuri.org/", "search");
+    private final static QName _QueryTypeDBResponseQueryTypeDBResult_QNAME = new QName("http://tempuri.org/", "queryTypeDBResult");
     private final static QName _AddDBRut_QNAME = new QName("http://tempuri.org/", "rut");
     private final static QName _AddDBDepto_QNAME = new QName("http://tempuri.org/", "depto");
     private final static QName _AddDBName_QNAME = new QName("http://tempuri.org/", "name");
+    private final static QName _QueryDBSearch_QNAME = new QName("http://tempuri.org/", "search");
     private final static QName _QueryDBResponseQueryDBResult_QNAME = new QName("http://tempuri.org/", "queryDBResult");
-    private final static QName _QueryTypeDBResponseQueryTypeDBResult_QNAME = new QName("http://tempuri.org/", "queryTypeDBResult");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: javafxapplication
@@ -320,9 +320,9 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "search", scope = QueryTypeDB.class)
-    public JAXBElement<String> createQueryTypeDBSearch(String value) {
-        return new JAXBElement<String>(_QueryTypeDBSearch_QNAME, String.class, QueryTypeDB.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "queryTypeDBResult", scope = QueryTypeDBResponse.class)
+    public JAXBElement<String> createQueryTypeDBResponseQueryTypeDBResult(String value) {
+        return new JAXBElement<String>(_QueryTypeDBResponseQueryTypeDBResult_QNAME, String.class, QueryTypeDBResponse.class, value);
     }
 
     /**
@@ -356,6 +356,15 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "search", scope = QueryDB.class)
+    public JAXBElement<String> createQueryDBSearch(String value) {
+        return new JAXBElement<String>(_QueryDBSearch_QNAME, String.class, QueryDB.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "queryDBResult", scope = QueryDBResponse.class)
     public JAXBElement<String> createQueryDBResponseQueryDBResult(String value) {
         return new JAXBElement<String>(_QueryDBResponseQueryDBResult_QNAME, String.class, QueryDBResponse.class, value);
@@ -365,18 +374,9 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "search", scope = QueryDB.class)
-    public JAXBElement<String> createQueryDBSearch(String value) {
-        return new JAXBElement<String>(_QueryTypeDBSearch_QNAME, String.class, QueryDB.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "queryTypeDBResult", scope = QueryTypeDBResponse.class)
-    public JAXBElement<String> createQueryTypeDBResponseQueryTypeDBResult(String value) {
-        return new JAXBElement<String>(_QueryTypeDBResponseQueryTypeDBResult_QNAME, String.class, QueryTypeDBResponse.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "search", scope = QueryTypeDB.class)
+    public JAXBElement<String> createQueryTypeDBSearch(String value) {
+        return new JAXBElement<String>(_QueryDBSearch_QNAME, String.class, QueryTypeDB.class, value);
     }
 
 }
