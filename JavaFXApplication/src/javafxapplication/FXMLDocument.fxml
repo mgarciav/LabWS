@@ -18,9 +18,18 @@
                      <center>
                         <TableView fx:id="fTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <columns>
-                              <TableColumn fx:id="fTableRut" prefWidth="75.0" text="Rut" />
-                              <TableColumn fx:id="fTableSueldo" prefWidth="75.0" text="Sueldo" />
-                              <TableColumn fx:id="fTablePagado" prefWidth="75.0" text="Pagado" />
+                              <TableColumn fx:id="fTableRut" prefWidth="75.0" text="Rut">
+                                <cellValueFactory><PropertyValueFactory property="Rut" />
+                                </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="fTableSueldo" prefWidth="75.0" text="Sueldo">
+                                <cellValueFactory><PropertyValueFactory property="Sueldo" />
+                                </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="fTablePagado" prefWidth="75.0" text="Pagado">
+                                <cellValueFactory><PropertyValueFactory property="Pagado" />
+                                </cellValueFactory>
+                              </TableColumn>
                            </columns>
                         </TableView>
                      </center>
