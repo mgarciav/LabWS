@@ -110,10 +110,9 @@ public class FXMLDocumentController implements Initializable {
         }
                 
         System.out.println(switchType1 + " " + fTextField.getText());
-                
         String resultado = busquedaPagado(fTextField.getText(), switchType1);
+        System.out.println(resultado);
         List<Employed1Json> empleados1 = new Gson().fromJson(resultado, new TypeToken<List<Employed1Json>>(){}.getType());
-                
         ObservableList<Employed1> data1;
         data1 = fTable.getItems();
         data1.clear();

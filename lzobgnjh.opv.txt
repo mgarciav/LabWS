@@ -1,0 +1,51 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	JavaFXApplication/build/built-jar.properties
+	JavaFXApplication/build/classes/javafxapplication/FXMLDocument.fxml
+	JavaFXApplication/build/classes/javafxapplication/FXMLDocumentController$2.class
+	JavaFXApplication/build/classes/javafxapplication/FXMLDocumentController$Employed1Json.class
+	JavaFXApplication/build/classes/javafxapplication/FXMLDocumentController$EmployedJson.class
+	JavaFXApplication/build/classes/javafxapplication/FXMLDocumentController.class
+	JavaFXApplication/build/classes/javafxapplication/ObjectFactory.class
+	JavaFXApplication/build/generated-sources/jax-ws/javafxapplication/ObjectFactory.java
+	JavaFXApplication/build/generated/jax-wsCache/Service1/javafxapplication/ObjectFactory.java
+	JavaFXApplication/dist/JavaFXApplication.jar
+	JavaFXApplication/src/javafxapplication/FXMLDocument.fxml
+	JavaFXApplication/src/javafxapplication/FXMLDocumentController.java
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 1 different commit each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	new file:   .gitignore
+#	modified:   JavaFXApplication/build/classes/javafxapplication/FXMLDocumentController$1.class
+#	new file:   JavaFXApplication/dist/run777003756/JavaFXApplication.html
+#	new file:   JavaFXApplication/dist/run777003756/JavaFXApplication.jar
+#	new file:   JavaFXApplication/dist/run777003756/JavaFXApplication.jnlp
+#	new file:   JavaFXApplication/dist/run777003756/lib/gson-2.3.1.jar
+#	new file:   JavaFXApplication/dist/run777003756/web-files/dtjava.js
+#	new file:   JavaFXApplication/dist/run777003756/web-files/error.png
+#	new file:   JavaFXApplication/dist/run777003756/web-files/get_java.png
+#	new file:   JavaFXApplication/dist/run777003756/web-files/get_javafx.png
+#	new file:   JavaFXApplication/dist/run777003756/web-files/javafx-chrome.png
+#	new file:   JavaFXApplication/dist/run777003756/web-files/javafx-loading-100x100.gif
+#	new file:   JavaFXApplication/dist/run777003756/web-files/javafx-loading-25x25.gif
+#	new file:   JavaFXApplication/dist/run777003756/web-files/upgrade_java.png
+#	new file:   JavaFXApplication/dist/run777003756/web-files/upgrade_javafx.png
+#	modified:   JavaFXApplication/nbproject/private/private.properties
+#	modified:   WebApplication1/nbproject/private/private.properties
+#
+

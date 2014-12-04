@@ -26,21 +26,6 @@ public interface NewWebService {
 
     /**
      * 
-     * @param rut
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "busquedaRut", targetNamespace = "http://finanzas/", className = "finanzas.BusquedaRut")
-    @ResponseWrapper(localName = "busquedaRutResponse", targetNamespace = "http://finanzas/", className = "finanzas.BusquedaRutResponse")
-    @Action(input = "http://finanzas/NewWebService/busquedaRutRequest", output = "http://finanzas/NewWebService/busquedaRutResponse")
-    public String busquedaRut(
-        @WebParam(name = "rut", targetNamespace = "")
-        String rut);
-
-    /**
-     * 
      * @param sueldo
      * @param numerito
      * @return
@@ -56,5 +41,20 @@ public interface NewWebService {
         String sueldo,
         @WebParam(name = "numerito", targetNamespace = "")
         int numerito);
+
+    /**
+     * 
+     * @param rut
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "busquedaRut", targetNamespace = "http://finanzas/", className = "finanzas.BusquedaRut")
+    @ResponseWrapper(localName = "busquedaRutResponse", targetNamespace = "http://finanzas/", className = "finanzas.BusquedaRutResponse")
+    @Action(input = "http://finanzas/NewWebService/busquedaRutRequest", output = "http://finanzas/NewWebService/busquedaRutResponse")
+    public String busquedaRut(
+        @WebParam(name = "rut", targetNamespace = "")
+        String rut);
 
 }

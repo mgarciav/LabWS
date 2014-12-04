@@ -4,31 +4,31 @@
 <xsd:import namespace="http://finanzas/" schemaLocation="http://localhost:8084/wsFinanzas/NewWebService?xsd=1" />
 </xsd:schema>
 </types>
-<message name="busquedaRut">
-<part name="parameters" element="tns:busquedaRut" />
-</message>
-<message name="busquedaRutResponse">
-<part name="parameters" element="tns:busquedaRutResponse" />
-</message>
 <message name="busquedaPagado">
 <part name="parameters" element="tns:busquedaPagado" />
 </message>
 <message name="busquedaPagadoResponse">
 <part name="parameters" element="tns:busquedaPagadoResponse" />
 </message>
+<message name="busquedaRut">
+<part name="parameters" element="tns:busquedaRut" />
+</message>
+<message name="busquedaRutResponse">
+<part name="parameters" element="tns:busquedaRutResponse" />
+</message>
 <portType name="NewWebService">
-<operation name="busquedaRut">
-<input wsam:Action="http://finanzas/NewWebService/busquedaRutRequest" message="tns:busquedaRut" />
-<output wsam:Action="http://finanzas/NewWebService/busquedaRutResponse" message="tns:busquedaRutResponse" />
-</operation>
 <operation name="busquedaPagado">
 <input wsam:Action="http://finanzas/NewWebService/busquedaPagadoRequest" message="tns:busquedaPagado" />
 <output wsam:Action="http://finanzas/NewWebService/busquedaPagadoResponse" message="tns:busquedaPagadoResponse" />
 </operation>
+<operation name="busquedaRut">
+<input wsam:Action="http://finanzas/NewWebService/busquedaRutRequest" message="tns:busquedaRut" />
+<output wsam:Action="http://finanzas/NewWebService/busquedaRutResponse" message="tns:busquedaRutResponse" />
+</operation>
 </portType>
 <binding name="NewWebServicePortBinding" type="tns:NewWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-<operation name="busquedaRut">
+<operation name="busquedaPagado">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -37,7 +37,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="busquedaPagado">
+<operation name="busquedaRut">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
