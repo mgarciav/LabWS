@@ -23,7 +23,7 @@ public final class Employed1 {
     public Employed1(String rut, String sueldo, String pagado) {
         setRut(rut);
         setSueldo(sueldo);
-        setRut(pagado);
+        setPagado(pagado);
     }
 
     
