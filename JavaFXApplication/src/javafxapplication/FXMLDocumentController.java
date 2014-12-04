@@ -112,12 +112,14 @@ public class FXMLDocumentController implements Initializable {
         System.out.println(switchType1 + " " + fTextField.getText());
         String resultado = busquedaPagado(fTextField.getText(), switchType1);
         System.out.println(resultado);
+        
         List<Employed1Json> empleados1 = new Gson().fromJson(resultado, new TypeToken<List<Employed1Json>>(){}.getType());
+        
         ObservableList<Employed1> data1;
         data1 = fTable.getItems();
         data1.clear();
         empleados1.stream().forEach((Employed1Json aux) -> {
-        data1.add(new Employed1(aux.Rut, aux.Sueldo, aux.Pagado));
+        data1.add(new Employed1(aux.rut, aux.sueldo, aux.pagado));
         });
     }
     
@@ -161,9 +163,9 @@ public class FXMLDocumentController implements Initializable {
     
     public class Employed1Json
     {
-        public String Rut;
-        public String Sueldo;
-        public String Pagado;
+        public String rut;
+        public String sueldo;
+        public String pagado;
     }
 
       
