@@ -120,6 +120,7 @@ public class FXMLDocumentController implements Initializable {
         data1.clear();
         empleados1.stream().forEach((Employed1Json aux) -> {
         data1.add(new Employed1(aux.rut, aux.sueldo, aux.pagado));
+        System.out.println(aux.rut +" " + aux.sueldo + " " + aux.pagado);
         });
     }
     
